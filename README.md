@@ -14,16 +14,15 @@ MARS is a premium, production-ready E-Commerce platform built with Django, Postg
 ## 🛠️ Tech Stack
 
 *   **Backend**: Python 3.11+, Django 5.2 (LTS)
-*   **Database**: PostgreSQL (Dockerized) / SQLite (Fallback)
+*   **Database**: PostgreSQL
 *   **Frontend**: Tailwind CSS, Vanilla JS
-*   **Infrastructure**: Docker, Docker Compose, GitHub Actions
+*   **Infrastructure**: GitHub Actions
 *   **Auth**: SimpleJWT (REST), Django Auth (Web)
 
 ## 📦 Prerequisites
 
 *   Python 3.11+
-*   PostgreSQL (optional, default is SQLite for quick setup)
-*   Docker & Docker Compose (for containerized deployment)
+*   PostgreSQL (required for production-like environment)
 
 ## 🚥 Installation & Setup
 
@@ -63,13 +62,6 @@ MARS is a premium, production-ready E-Commerce platform built with Django, Postg
     python manage.py runserver
     ```
 
-## 🐳 Docker Deployment
-
-To run the entire stack (Django, Gunicorn, PostgreSQL) in containers:
-
-```bash
-docker-compose up --build
-```
 
 ## 📂 Media & Static
 
