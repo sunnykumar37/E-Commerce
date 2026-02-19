@@ -102,10 +102,13 @@
                     </div>
                 </a>
                 <div class="px-3 sm:px-4 pb-3 sm:pb-4">
-                    <button
-                        class="btn-premium w-full !rounded-lg !py-2.5 !text-xs shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 active:scale-[0.98]">
-                        Add to Cart
-                    </button>
+                    <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit"
+                            class="btn-premium w-full !rounded-lg !py-2.5 !text-xs shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 active:scale-[0.98]">
+                            Add to Cart
+                        </button>
+                    </form>
                 </div>
             </div>
             {% empty %}

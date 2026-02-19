@@ -8,6 +8,7 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')), # default auth urls
     path('accounts/', include('accounts.urls')),
     path('products/', include('products.urls')),
+    path('cart/', include('cart.urls', namespace='cart')),
     path('api/', include('api.urls')),
     path('', include('products.urls')), # Home redirects to products for now
 ]
