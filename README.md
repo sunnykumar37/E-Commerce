@@ -48,7 +48,7 @@ MARS is a premium, production-ready E-Commerce platform built with Django, Postg
 
 5.  **Run Migrations**:
     ```bash
-    python manage.py migrate
+   
     ```
 
 6.  **Seed Sample Data**:
@@ -71,3 +71,4 @@ MARS is a premium, production-ready E-Commerce platform built with Django, Postg
 ## 📝 License
 
 Distributed under the MIT License. See `LICENSE` for more information.
+ python manage.py migrate
