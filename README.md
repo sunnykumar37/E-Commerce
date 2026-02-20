@@ -1,4 +1,4 @@
-# 🛒 E-Commerce Store
+# 🛒 R.onny Store
 
 A full-featured e-commerce platform built with **Django**, **PostgreSQL**, and a modern minimal UI.
 
@@ -121,7 +121,7 @@ E-Commerce/
 - **Frontend:** Custom CSS with CSS variables, Tailwind CSS (CDN)
 - **Auth:** Django built-in + custom email notifications
 - **API Auth:** JWT via SimpleJWT
-- **Fonts:** Google Fonts (Outfit)
+- **Fonts:** Google Fonts (Inter)
 
 ---
 
@@ -131,10 +131,27 @@ The app sends branded emails via Gmail SMTP:
 
 | Event | Subject |
 |---|---|
-| New signup | `Store \| Welcome to Our Store!` |
-| Login | `Store \| New Login to Your Account` |
-| Logout | `Store \| You've Been Logged Out` |
-| Order placed | `Store \| Order #X Confirmed` |
+| New signup | `Store | Welcome to Our Store!` |
+| Login | `Store | New Login to Your Account` |
+| Logout | `Store | You've Been Logged Out` |
+| Order placed | `Store | Order #X Confirmed` |
+
+---
+
+## 📸 Screenshots
+
+### Customer View
+| | |
+|---|---|
+| ![Home](screenchots/customer/Screenshot%202026-02-20%20134203.png) | ![Products](screenchots/customer/Screenshot%202026-02-20%20134219.png) |
+| ![Product Detail](screenchots/customer/Screenshot%202026-02-20%20134228.png) | ![Cart](screenchots/customer/Screenshot%202026-02-20%20134241.png) |
+| ![Checkout](screenchots/customer/Screenshot%202026-02-20%20134305.png) | |
+
+### Seller View
+| | |
+|---|---|
+| ![Dashboard](screenchots/seller/Screenshot%202026-02-20%20133951.png) | ![Add Product](screenchots/seller/Screenshot%202026-02-20%20134017.png) |
+| ![Product Management](screenchots/seller/Screenshot%202026-02-20%20134029.png) | ![Seller Orders](screenchots/seller/Screenshot%202026-02-20%20134430.png) |
 
 ---
 
