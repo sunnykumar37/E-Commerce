@@ -8,6 +8,26 @@ from .forms import ProductForm
 
 
 @login_required
+def seller_dashboard(request):
+    if request.user.role != 'seller':
+        messages.error(request, "Access denied. Seller account required.")
+        return redirect('product_list')
+    
+    products = Product.objects.filter(seller=request.user).order_by('-created_at')
+    # Filter order items related to this seller's products
+    from orders.models import OrderItem
+    orders = OrderItem.objects.filter(product__seller=request.user).order_by('-order__created_at')
+    
+    context = {
+        'products': products,
+        'orders': orders,
+        'product_count': products.count(),
+        'order_count': orders.count(),
+    }
+    return render(request, 'products/seller_dashboard.html', context)
+
+
+@login_required
 def product_create(request):
     if request.user.role != 'seller':
         messages.error(request, "Only sellers can add products.")

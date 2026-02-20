@@ -18,6 +18,8 @@ def signup_view(request):
             EmailService.send_welcome_email(user)
             messages.success(request, "Registration successful! Welcome aboard.")
             login(request, user)
+            if user.role == 'seller':
+                return redirect('seller_dashboard')
             return redirect('product_list')
         messages.error(request, "Please correct the errors below.")
     else:
@@ -42,8 +44,10 @@ def login_view(request):
             if next_url:
                 return redirect(next_url)
             # Role-based redirect
-            if user.role in ['admin', 'seller'] or user.is_superuser:
+            if user.is_superuser:
                 return redirect('/admin/')
+            if user.role == 'seller':
+                return redirect('seller_dashboard')
             return redirect('product_list')
         else:
             messages.error(request, "Invalid email or password. Please try again.")

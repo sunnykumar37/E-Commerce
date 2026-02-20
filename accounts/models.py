@@ -8,7 +8,7 @@ class User(AbstractUser):
         ('customer', 'Customer'),
         ('seller', 'Seller'),
     )
-    
+   
     email = models.EmailField(_('email address'), unique=True)
     role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='customer')
     phone_number = models.CharField(max_length=15, blank=True, null=True)

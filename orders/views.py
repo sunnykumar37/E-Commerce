@@ -13,31 +13,18 @@ def checkout(request):
         return redirect('cart:cart_detail')
         
     if request.method == 'POST':
-        # Create the order
-        order = Order.objects.create(
-            user=request.user,
-            total_amount=cart_manager.calculate_total(),
-            status='Pending'
-        )
+        from .services import CheckoutService
+        order, message = CheckoutService.process_checkout(request.user)
         
-        # Move cart items to order items
-        for item in cart_manager.cart.items.all():
-            OrderItem.objects.create(
-                order=order,
-                product=item.product,
-                price=item.product.discount_price if item.product.discount_price else item.product.price,
-                quantity=item.quantity
-            )
+        if order:
+            # Send order confirmation email
+            EmailService.send_order_confirmation(request.user, order)
+            messages.success(request, f"{message} Check your email for confirmation.")
+            return redirect('orders:success', order_id=order.id)
+        else:
+            messages.error(request, message)
+            return redirect('cart:cart_detail')
             
-        # Clear the cart
-        cart_manager.cart.items.all().delete()
-
-        # Send order confirmation email
-        EmailService.send_order_confirmation(request.user, order)
-
-        messages.success(request, "Order placed successfully! Check your email for confirmation.")
-        return redirect('orders:success', order_id=order.id)
-        
     return render(request, 'orders/checkout.html', {
         'cart': cart_manager.cart,
         'total_price': cart_manager.calculate_total()
