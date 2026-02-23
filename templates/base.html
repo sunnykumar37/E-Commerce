@@ -131,8 +131,7 @@
                         <div id="profile-dropdown-menu" class="hidden absolute right-0 mt-2 w-48 rounded-xl py-2 z-50"
                             style="background: var(--bg); border: 1px solid var(--border); box-shadow: var(--shadow-lg);">
                             <div class="px-4 py-2 border-b" style="border-color: var(--border);">
-                                <p class="text-sm font-medium" style="color: var(--text-primary);">{{
-                                    user.first_name|default:user.email }}</p>
+                                <p class="text-sm font-medium" style="color: var(--text-primary);">{{ user.first_name|default:user.email }}</p>
                             </div>
                             <a href="{% url 'profile' %}" class="block px-4 py-2 text-sm transition-colors"
                                 style="color: var(--text-secondary);">My Profile</a>
