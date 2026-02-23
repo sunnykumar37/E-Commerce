@@ -32,7 +32,7 @@ A full-featured e-commerce platform built with **Django**, **PostgreSQL**, and a
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/sunnykumar37/E-Commerce.git
+git clone https://github.com/rishabhtcodes/E-Commerce.git
 cd E-Commerce
 
 # 2. Create and activate virtual environment
