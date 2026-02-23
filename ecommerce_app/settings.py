@@ -1,5 +1,5 @@
 """
-Django settings for ecommerce_app project.
+Django settings for ecommerce_app project...
 """
 
 import os
