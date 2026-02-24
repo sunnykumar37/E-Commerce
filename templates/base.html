@@ -135,6 +135,8 @@
                             </div>
                             <a href="{% url 'profile' %}" class="block px-4 py-2 text-sm transition-colors"
                                 style="color: var(--text-secondary);">My Profile</a>
+                            <a href="{% url 'password_change' %}" class="block px-4 py-2 text-sm transition-colors"
+                                style="color: var(--text-secondary);">Change Password</a>
                             {% if user.role == 'seller' %}
                             <a href="{% url 'seller_dashboard' %}" class="block px-4 py-2 text-sm transition-colors"
                                 style="color: var(--text-secondary);">Seller Dashboard</a>
@@ -196,6 +198,8 @@
                 style="color: var(--text-secondary);">Orders</a>
             <a href="{% url 'profile' %}" class="block px-3 py-2.5 rounded-lg text-sm font-medium"
                 style="color: var(--text-secondary);">Profile</a>
+            <a href="{% url 'password_change' %}" class="block px-3 py-2.5 rounded-lg text-sm font-medium"
+                style="color: var(--text-secondary);">Change Password</a>
             <form action="{% url 'logout' %}" method="post">
                 {% csrf_token %}
                 <button type="submit"
